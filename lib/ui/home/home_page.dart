@@ -33,7 +33,12 @@ class _HomePageState extends State<HomePage> {
               onTap: () {
                 onSearch(textEditingController.text);
               },
-              child: const Icon(Icons.search),
+              child: Container(
+                width: 50,
+                height: 50,
+                color: Colors.transparent,
+                child: const Icon(Icons.search),
+              ),
             )
           ],
           title: TextField(
