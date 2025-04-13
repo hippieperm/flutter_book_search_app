@@ -5,9 +5,14 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: const Text('HomePage'),
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        appBar: AppBar(
+          title: const TextField(),
+        ),
+        body: const Text('HomePage'),
+      ),
     );
   }
 }
