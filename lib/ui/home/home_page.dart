@@ -28,6 +28,14 @@ class _HomePageState extends State<HomePage> {
       },
       child: Scaffold(
         appBar: AppBar(
+          actions: [
+            GestureDetector(
+              onTap: () {
+                onSearch(textEditingController.text);
+              },
+              child: const Icon(Icons.search),
+            )
+          ],
           title: TextField(
             maxLines: 1,
             onSubmitted: onSearch,
