@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
   final TextEditingController textEditingController = TextEditingController();
 
+  void onSearch(String text) {
+    //
+  }
+
   HomePage({super.key});
 
   @override
