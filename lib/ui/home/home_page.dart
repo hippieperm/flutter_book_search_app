@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   final TextEditingController textEditingController = TextEditingController();
 
-  void onSearch(String text) {
-    //
+  @override
+  void dispose() {
+    textEditingController.dispose();
+    super.dispose();
   }
 
-  HomePage({super.key});
+  void onSearch(String text) {
+    print('onSearch');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +30,7 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
           title: TextField(
             maxLines: 1,
+            onSubmitted: onSearch,
             controller: textEditingController,
             decoration: InputDecoration(
                 hintText: '검색어를 입력해 주세요.',
