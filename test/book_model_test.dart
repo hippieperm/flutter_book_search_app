@@ -22,5 +22,6 @@ void main() {
     Book book = Book.fromJson(map);
 
     expect(book.discount, '41680');
+    print(book.toJson());
   });
 }
