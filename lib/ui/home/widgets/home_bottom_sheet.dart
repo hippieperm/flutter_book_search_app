@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_book_search_app/ui/detail/detail_page.dart';
 
 class HomeBottomSheet extends StatelessWidget {
   const HomeBottomSheet({super.key});
@@ -16,13 +17,62 @@ class HomeBottomSheet extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Image.network('https://picsum.photos/200/300'),
-          const Expanded(
+          Image.network(
+            'https://picsum.photos/200/300',
+            fit: BoxFit.cover,
+          ),
+          const SizedBox(width: 20),
+          Expanded(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('data'),
-                Text('data'),
-                Text('data'),
+                const Text(
+                  '해리포터의 마법사의 돌',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                const Text(
+                  'J.K  롤링',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                  ),
+                ),
+                const Text(
+                  '해리포터의 마법사의 돌을 찾아가는 여정',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                  ),
+                ),
+                Spacer(),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return const DetailPage();
+                        },
+                      ),
+                    );
+                  },
+                  child: Container(
+                    height: 50,
+                    width: double.infinity,
+                    color: Colors.transparent,
+                    alignment: Alignment.center,
+                    child: const Text(
+                      '자세히 보기',
+                      style: TextStyle(
+                        color: Colors.blueAccent,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           )
