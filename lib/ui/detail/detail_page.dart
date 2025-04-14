@@ -16,11 +16,11 @@ class DetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('해리포터의 마법사의 '),
+        title: Text(book.title),
       ),
       body: InAppWebView(
         initialUrlRequest: URLRequest(
-          url: WebUri('http://www.naver.com'),
+          url: WebUri(book.link),
         ),
         initialSettings: InAppWebViewSettings(
           userAgent:
