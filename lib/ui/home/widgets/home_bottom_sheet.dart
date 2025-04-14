@@ -65,7 +65,7 @@ class HomeBottomSheet extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return const DetailPage();
+                          return DetailPage(book: book);
                         },
                       ),
                     );
