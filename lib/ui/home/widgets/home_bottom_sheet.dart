@@ -1,8 +1,17 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
+import 'package:flutter_book_search_app/data/model/book.dart';
+
 import '../../detail/detail_page.dart';
 
 class HomeBottomSheet extends StatelessWidget {
-  const HomeBottomSheet({super.key});
+  Book book;
+
+  HomeBottomSheet({
+    super.key,
+    required this.book,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +27,7 @@ class HomeBottomSheet extends StatelessWidget {
       child: Row(
         children: [
           Image.network(
-            'https://picsum.photos/200/300',
+            book.image,
             fit: BoxFit.cover,
           ),
           const SizedBox(width: 20),
@@ -26,28 +35,30 @@ class HomeBottomSheet extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  '해리포터의 마법사의 돌',
-                  style: TextStyle(
+                Text(
+                  book.title,
+                  maxLines: 2,
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
                   ),
                 ),
-                const Text(
-                  'J.K  롤링',
-                  style: TextStyle(
+                Text(
+                  book.author,
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 14,
                   ),
                 ),
-                const Text(
-                  '해리포터의 마법사의 돌을 찾아가는 여정',
-                  style: TextStyle(
+                Text(
+                  book.description,
+                  maxLines: 2,
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 14,
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
