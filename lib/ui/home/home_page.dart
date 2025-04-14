@@ -63,7 +63,18 @@ class _HomePageState extends State<HomePage> {
                 )),
           ),
         ),
-        body: const Text('HomePage'),
+        body: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+            childAspectRatio: 3 / 4,
+            crossAxisSpacing: 10,
+            mainAxisExtent: 10,
+          ),
+          itemCount: 10,
+          itemBuilder: (BuildContext context, int index) {
+            return Image.network('https://picsum.photos/200/300');
+          },
+        ),
       ),
     );
   }
