@@ -22,6 +22,6 @@ class HomeViewModel extends Notifier<HomeState> {
   }
 }
 
-final homeProvider = NotifierProvider<HomeViewModel, HomeState>(() {
+final homeViewModelProvider = NotifierProvider<HomeViewModel, HomeState>(() {
   return HomeViewModel();
 });

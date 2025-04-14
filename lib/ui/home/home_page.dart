@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_book_search_app/ui/home/home_view_model.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'widgets/home_bottom_sheet.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  ConsumerState<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends ConsumerState<HomePage> {
   final TextEditingController textEditingController = TextEditingController();
 
   @override
@@ -17,12 +19,12 @@ class _HomePageState extends State<HomePage> {
     super.dispose();
   }
 
-  void onSearch(String text) {
-    print('onSearch');
-  }
+  void onSearch(String text) {}
 
   @override
   Widget build(BuildContext context) {
+    final HomeState = ref.watch(homeViewModelProvider);
+
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
@@ -73,8 +75,10 @@ class _HomePageState extends State<HomePage> {
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
           ),
-          itemCount: 10,
+          itemCount: HomeState.books.length,
           itemBuilder: (BuildContext context, int index) {
+            final book = HomeState.books[index];
+            
             return GestureDetector(
               onTap: () {
                 showModalBottomSheet(
