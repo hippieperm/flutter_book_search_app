@@ -19,7 +19,9 @@ class _HomePageState extends ConsumerState<HomePage> {
     super.dispose();
   }
 
-  void onSearch(String text) {}
+  void onSearch(String text) {
+    ref.read(homeViewModelProvider.notifier).searchBooks(text);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -78,17 +80,17 @@ class _HomePageState extends ConsumerState<HomePage> {
           itemCount: HomeState.books.length,
           itemBuilder: (BuildContext context, int index) {
             final book = HomeState.books[index];
-            
+
             return GestureDetector(
               onTap: () {
                 showModalBottomSheet(
                   context: context,
                   builder: (context) {
-                    return const HomeBottomSheet();
+                    return HomeBottomSheet(book: book);
                   },
                 );
               },
-              child: Image.network('https://picsum.photos/200/300'),
+              child: Image.network(book.image),
             );
           },
         ),
