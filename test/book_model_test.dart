@@ -18,9 +18,9 @@ void main() {
       "description": "Set in the 1980s, Harry is a young girl who, overnight, turned from a chrysalis into a butterfly. Harry finds love and fame whilst on a family holiday in Spain."
     }
 ''';
-    Map<String,dynamic> map = jsonDecode(dummyData);
-    Book.fromJson(map);
+    Map<String, dynamic> map = jsonDecode(dummyData);
+    Book book = Book.fromJson(map);
 
-    expect(actual, matcher)
+    expect(book.discount, '41680');
   });
 }
