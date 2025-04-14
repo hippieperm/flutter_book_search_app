@@ -6,8 +6,10 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Text('DetailPage'),
+      appBar: AppBar(
+        title: const Text('해리포터의 마법사의 '),
+      ),
+      body: const Text('DetailPage'),
     );
   }
 }

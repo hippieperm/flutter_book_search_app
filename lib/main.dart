@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_book_search_app/ui/home/home_page.dart';
+import 'ui/detail/detail_page.dart';
+import 'ui/home/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: HomePage(),
+      home: const DetailPage(),
+      // home: HomePage(),
     );
   }
 }

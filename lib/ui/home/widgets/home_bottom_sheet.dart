@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_book_search_app/ui/detail/detail_page.dart';
+import '../../detail/detail_page.dart';
 
 class HomeBottomSheet extends StatelessWidget {
   const HomeBottomSheet({super.key});

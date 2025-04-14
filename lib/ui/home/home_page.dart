@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_book_search_app/ui/home/widgets/home_bottom_sheet.dart';
+import 'widgets/home_bottom_sheet.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
