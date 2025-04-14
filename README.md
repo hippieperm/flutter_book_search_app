@@ -12,6 +12,11 @@
 
 | ![Screenshot 1](path/to/screenshot1.png) | ![Screenshot 2](path/to/screenshot2.png) | ![Screenshot 3](path/to/screenshot3.png) |
 | :--------------------------------------: | :--------------------------------------: | :--------------------------------------: |
+![Simulator Screenshot - iPhone 16 Pro Max - 2025-04-14 at 23 41 31](https://github.com/user-attachments/assets/458dc354-d7c0-4e61-9d44-ecdcd17be186)
+![Simulator Screenshot - iPhone 16 Pro Max - 2025-04-14 at 23 41 36](https://github.com/user-attachments/assets/0ada9fd7-d22c-4022-88d3-9f4384ab2d5c)
+![Simulator Screenshot - iPhone 16 Pro Max - 2025-04-14 at 23 41 47](https://github.com/user-attachments/assets/1223b053-c185-44c7-a779-dfb8615ec959)
+
+
 
 ## 🛠️ 설치 및 실행
 
