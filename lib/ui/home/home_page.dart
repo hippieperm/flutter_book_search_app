@@ -46,21 +46,22 @@ class _HomePageState extends State<HomePage> {
             onSubmitted: onSearch,
             controller: textEditingController,
             decoration: InputDecoration(
-                hintText: '검색어를 입력해 주세요.',
-                border: MaterialStateOutlineInputBorder.resolveWith(
-                  (states) {
-                    if (states.contains(WidgetState.focused)) {
-                      return OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: const BorderSide(color: Colors.black),
-                      );
-                    }
+              hintText: '검색어를 입력해 주세요.',
+              border: MaterialStateOutlineInputBorder.resolveWith(
+                (states) {
+                  if (states.contains(WidgetState.focused)) {
                     return OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(color: Colors.grey),
+                      borderSide: const BorderSide(color: Colors.black),
                     );
-                  },
-                )),
+                  }
+                  return OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: const BorderSide(color: Colors.grey),
+                  );
+                },
+              ),
+            ),
           ),
         ),
         body: GridView.builder(
