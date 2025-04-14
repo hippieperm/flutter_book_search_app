@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_book_search_app/ui/home/widgets/home_bottom_sheet.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -65,15 +66,26 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         body: GridView.builder(
+          padding: const EdgeInsets.all(20),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
             childAspectRatio: 3 / 4,
             crossAxisSpacing: 10,
-            mainAxisExtent: 10,
+            mainAxisSpacing: 10,
           ),
           itemCount: 10,
           itemBuilder: (BuildContext context, int index) {
-            return Image.network('https://picsum.photos/200/300');
+            return GestureDetector(
+              onTap: () {
+                showModalBottomSheet(
+                  context: context,
+                  builder: (context) {
+                    return const HomeBottomSheet();
+                  },
+                );
+              },
+              child: Image.network('https://picsum.photos/200/300'),
+            );
           },
         ),
       ),
